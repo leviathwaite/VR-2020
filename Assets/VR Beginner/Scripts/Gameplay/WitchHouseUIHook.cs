@@ -21,6 +21,7 @@ public class WitchHouseUIHook : WatchScript.IUIHook
         LeftUILineRenderer.SetActive(false);
         RightUILineRenderer.SetActive(false);
 
-        watch.UILineRenderer = LeftUILineRenderer;
+        // watch.UILineRenderer = LeftUILineRenderer;
+        watch.SetLineRenderer(LeftUILineRenderer);
     }
 }

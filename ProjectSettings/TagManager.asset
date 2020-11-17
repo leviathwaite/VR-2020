@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ignite
+  - Missile
+  - RightHandLine
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Hands
   - Teleporter
   - NoHandCollide
-  - 
-  - 
+  - GrabIgnoreRay
+  - Body
   - 
   - 
   - 
@@ -41,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ClosedCaptions
+    uniqueID: 2886256087
     locked: 0

@@ -29,13 +29,20 @@ public class WatchScript : MonoBehaviour
     public UnityEvent OnLoaded;
     public UnityEvent OnUnloaded;
 
-    public GameObject UILineRenderer;
+    // public GameObject UILineRenderer;
+    private GameObject UILineRenderer;
     
     bool m_Loading = false;
     float m_LoadingTimer;
 
     void Start()
     {
+        // TODO remove
+        Debug.Log("Game Objecct Name: " + gameObject.name);
+
+        UILineRenderer = GameObject.FindGameObjectWithTag("RightHandLine");
+
+
         LoadingSlider.gameObject.SetActive(false);
 
         var hooks = FindObjectsOfType<IUIHook>();
@@ -77,6 +84,12 @@ public class WatchScript : MonoBehaviour
         m_Loading = false;
         OnUnloaded.Invoke();
         LoadingSlider.gameObject.SetActive(false);
+
+        if(!UILineRenderer)
+        {
+            UILineRenderer = GameObject.FindGameObjectWithTag("RightHandLine");
+        }
+
         UILineRenderer.SetActive(false);
     }
 
@@ -112,5 +125,10 @@ public class WatchScript : MonoBehaviour
         }
 
         root.gameObject.layer = layer;
+    }
+
+    public void SetLineRenderer(GameObject lr)
+    {
+        UILineRenderer = lr;
     }
 }
